@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>AI Email Writer</title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+</head>
+
+
+<body>
+
+    <main class="container">
+
+        <!-- HEADER -->
+
+        <section class="header">
+
+            <div class="icon">
+                ✉
+            </div>
+
+            <h1>AI Email Writer</h1>
+
+            <p>
+                Create professional emails in seconds with AI
+            </p>
+
+        </section>
+
+
+        <!-- MAIN CARD -->
+
+        <section class="email-card">
+
+
+            <!-- RECIPIENT -->
+
+            <div class="form-group">
+
+                <label for="recipient">
+                    Recipient
+                </label>
+
+                <input
+                    type="text"
+                    id="recipient"
+                    placeholder="e.g. Professor, Manager, Client"
+                >
+
+            </div>
+
+
+            <!-- PURPOSE -->
+
+            <div class="form-group">
+
+                <label for="purpose">
+                    Purpose of Email
+                </label>
+
+                <input
+                    type="text"
+                    id="purpose"
+                    placeholder="e.g. Request for project extension"
+                >
+
+            </div>
+
+
+            <!-- TONE -->
+
+            <div class="form-group">
+
+                <label for="tone">
+                    Email Tone
+                </label>
+
+                <select id="tone">
+
+                    <option value="Professional">
+                        Professional
+                    </option>
+
+                    <option value="Formal">
+                        Formal
+                    </option>
+
+                    <option value="Friendly">
+                        Friendly
+                    </option>
+
+                    <option value="Casual">
+                        Casual
+                    </option>
+
+                    <option value="Polite">
+                        Polite
+                    </option>
+
+                    <option value="Apologetic">
+                        Apologetic
+                    </option>
+
+                    <option value="Persuasive">
+                        Persuasive
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <!-- KEY POINTS -->
+
+            <div class="form-group">
+
+                <div class="label-row">
+
+                    <label for="keyPoints">
+                        Important Points
+                    </label>
+
+                    <span id="characterCount">
+                        0 / 5000
+                    </span>
+
+                </div>
+
+
+                <textarea
+                    id="keyPoints"
+                    maxlength="5000"
+                    placeholder="Write the important points you want to include in the email..."
+                ></textarea>
+
+            </div>
+
+
+            <!-- BUTTON -->
+
+            <button
+                id="generateButton"
+                onclick="generateEmail()"
+            >
+
+                Generate Email
+
+            </button>
+
+
+            <!-- LOADING -->
+
+            <div
+                id="loading"
+                class="loading hidden"
+            >
+
+                <div class="spinner"></div>
+
+                <p>
+                    Writing your email...
+                </p>
+
+            </div>
+
+
+            <!-- ERROR -->
+
+            <div
+                id="errorMessage"
+                class="error hidden"
+            ></div>
+
+
+            <!-- RESULT -->
+
+            <div
+                id="resultSection"
+                class="result-section hidden"
+            >
+
+                <div class="result-header">
+
+                    <h2>
+                        Generated Email
+                    </h2>
+
+                    <button
+                        id="copyButton"
+                        class="copy-button"
+                        onclick="copyEmail()"
+                    >
+                        Copy
+                    </button>
+
+                </div>
+
+
+                <div
+                    id="emailOutput"
+                    class="email-output"
+                ></div>
+
+            </div>
+
+
+        </section>
+
+    </main>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
